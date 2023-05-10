@@ -3309,14 +3309,14 @@ a {
 }
 
 body {
-    overflow: hidden;
+    /*overflow: hidden;*/
     height: 100%;
     font-size: 100%;
     /*background-size:cover;
     background: url(../img/background.jpg) no-repeat;
     background-attachment: fixed;*/
-    background: -webkit-linear-gradient(315deg, #00C4FF, #9D1BB2) no-repeat fixed;
-    background: linear-gradient(135deg, #00C4FF, #9D1BB2) no-repeat fixed;
+    background: -webkit-linear-gradient(315deg, #00C4FF, #000000) no-repeat fixed;
+    background: linear-gradient(135deg, #00C4FF, #000000) no-repeat fixed;
     overflow: hidden;
     font-family: 'Helvetica Neue', 'Microsoft Yahei', SimHei, sans-serif
 }
@@ -3335,6 +3335,7 @@ body {
 }
 
 #main {
+    /*margin: 0 auto;*/
     margin-top: 6%
 }
 
@@ -3356,6 +3357,15 @@ body {
     font-size: 36px;
     font-family: MyriadSetPro-Thin;
     margin-top: 15px
+}
+
+/*使无序列表居中显示*/
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    /*flex-flow: row nowrap;*/
+    justify-content: center;
 }
 
 ul li {
