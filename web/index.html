@@ -8,12 +8,12 @@
     <link href="favicon.ico" rel="shortcut icon"/>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <!--减少服务器的资源开销用了cdn,如果想全部使用自己的服务器的jquery,注释"...@3.6.0/dist/jquery.min.js",取消注释"js/jquery.min.js"即可-->
-    <script src="https://fastly.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <!--<script src="js/jquery.min.js"></script>-->
+<!--    <script src="https://fastly.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>-->
+    <script src="js/jquery.min.js"></script>
     <script src="js/qieh.js"></script>
     <!--减少服务器的资源开销用了cdn,如果想全部使用自己的服务器的particles,注释"...@2.0.0/particles.min.js",取消注释"js/particles.min.js"即可-->
-    <script src="https://fastly.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <!--<script src="js/particles.min.js"></script>-->
+<!--    <script src="https://fastly.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>-->
+    <script src="js/particles.min.js"></script>
     <script src="js/font.js"></script>
     <title>NasHomeCloud</title>
     <style type="text/css">
@@ -21,7 +21,7 @@
       /*也可以直接打开下面注释直接覆盖原生的渐变色背景,建议打开背景图之后注释原生的3318和3319行渐变色背景样式*/
       body {
         overflow: auto;
-        /*background-size: cover;*/
+        background-size: cover;
         /*background: url(img/background.jpg) no-repeat center top;*/
         /*background-attachment: fixed;*/
       }
@@ -201,7 +201,7 @@
             </div>
             <div class="" id="kg-btn">
                 <input class='tgl tgl-flip' id='qieh' type='checkbox'/>
-                <label class='tgl-btn' data-tg-off='OFFICE' data-tg-on='HOME' for='qieh'></label>
+                <label class='tgl-btn' data-tg-off='外网' data-tg-on='内外' for='qieh'></label>
             </div>
         </div>
     </div>
@@ -224,11 +224,11 @@
                         <img class="shake" src="img/png/Music.png"/>
                         <strong>聆听音乐</strong></a>
                 </li>
-                <li>
-                    <a href="#" target="_blank">
-                        <img class="shake" src="img/png/Photos.png"/>
-                        <strong>流金岁月</strong></a>
-                </li>
+<!--                <li>-->
+<!--                    <a href="#" target="_blank">-->
+<!--                        <img class="shake" src="img/png/Photos.png"/>-->
+<!--                        <strong>流金岁月</strong></a>-->
+<!--                </li>-->
                 <li>
                     <a href="#" target="_blank">
                         <img class="shake" src="img/png/Videos.png"/>
@@ -351,6 +351,20 @@
     </div>
 </div>
 </body>
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            'url': './lan.php',
+            type:"get",
+            dataType:"json",
+            success: function(result) {
+                if (result.lan) {
+                    $('#qieh').click();
+                }
+            }
+        });
+    });
+</script>
 <!--以下代码为内外网自动切换功能，如需要请打开注释-->
 <!--<script type="text/javascript">
   $(function () {
