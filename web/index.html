@@ -27,10 +27,14 @@
       }
 
       /*以下补充样式用于修复手机浏览下的一些体验*/
-      @media only screen and (max-width: 479px) {
+      @media only screen and (max-width: 479px){
+        ul{
+            padding-top: 10%;
+        }
         div ul li {
           display: flex;
           margin: 0 0 0 0;
+          padding-top: 10%;
         }
 
         div ul li a {
@@ -46,18 +50,19 @@
         }
 
         #footer {
-          height: unset;
+          /*height: unset;*/
+            text-align: center;
         }
 
-        .footer-contents {
-          position: unset;
-        }
+        /*.footer-contents {*/
+        /*  position: unset;*/
+        /*}*/
 
-        .footer-contents .links .line {
-          margin-top: 20px;
-          margin-right: 10px;
-          margin-bottom: 10px;
-        }
+        /*.footer-contents .links .line {*/
+        /*  margin-top: 20px;*/
+        /*  margin-right: 10px;*/
+        /*  margin-bottom: 10px;*/
+        /*}*/
       }
 
       @media only screen and (max-width: 349px) {
